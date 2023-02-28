@@ -1,0 +1,24 @@
+{
+    "label": "deploy-policy-wstt-runtime-$ARCH",
+    "description": "A deploy policy for WSTT runtime on $ARCH",
+    "service": {
+	"name": "$EDGE_OWNER.$EDGE_DEPLOY.watson-stt-runtime",
+	"org": "$HZN_ORG_ID",
+	"arch": "$ARCH",
+	"serviceVersions": [
+	    {
+		"version": "1.0.0",
+		"priority":{}
+	    }
+	]
+    },
+    "properties": [
+    ],
+    "constraints": [
+	"owner == $EDGE_OWNER",
+	"deploy == $EDGE_DEPLOY",
+	"wstt.runtime == true"
+    ],
+    "userInput": [
+    ]
+}
