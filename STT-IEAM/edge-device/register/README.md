@@ -20,8 +20,45 @@ For other languages, for example french, provide an additional parameter in the 
 ```
 curl "http://localhost:1080/speech-to-text/api/v1/recognize" --header "Content-Type: audio/wav" --data-binary @single-container-stt_sample_dataset_en-quote-1.wav
 ```
+Expected output:
+```
+curl "http://localhost:1080/speech-to-text/api/v1/recognize"   --header "Content-Type: audio/wav"   --data-binary @single-container-stt_sample_dataset_en-quote-1.wav
+{
+   "result_index": 0,
+   "results": [
+      {
+         "final": true,
+         "alternatives": [
+            {
+               "transcript": "the day will come when there will be no battlefields but markets opening to commerce and minds opening to ideas ",
+               "confidence": 0.94
+            }
+         ]
+      }
+   ]
+}
+```
 
 - French
 ```
 curl "http://localhost:1080/speech-to-text/api/v1/recognize?model=fr-FR_Multimedia" --header "Content-Type: audio/wav" --data-binary @single-container-stt_sample_dataset_fr-quote-1.wav
+```
+
+Expected output:
+```
+curl "http://localhost:1080/speech-to-text/api/v1/recognize?model=fr-FR_Multimedia" --header "Content-Type: audio/wav" --data-binary @single-container-stt_sample_dataset_fr-quote-1.wav
+{
+   "result_index": 0,
+   "results": [
+      {
+         "final": true,
+         "alternatives": [
+            {
+               "transcript": "un jour viendra où il n'y aura plus d'autres champs de bataille que les marchés s'ouvrant au commerce et les esprits s'ouvrant aux idées ",
+               "confidence": 0.98
+            }
+         ]
+      }
+   ]
+}
 ```
